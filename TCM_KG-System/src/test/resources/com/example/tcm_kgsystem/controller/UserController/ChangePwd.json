@@ -1,0 +1,25 @@
+{
+	"User":{
+		"userId":1,
+		"userName":"test",
+		"userPassword":"test",
+		"userSex":"test",
+		"userEmail":"test",
+		"userPhone":"test",
+		"userStatus":1,
+		"registerTime":1684147046323,
+		"userBirthday":1684147046323,
+		"userImg":"test",
+		"userFans":1,
+		"userConcern":1,
+		"userLike":1,
+		"userView":1,
+		"userSecurity":1,
+		"userToken":"test"
+	},
+	"TransportObject":{
+		"code":1,
+		"msg":"test",
+		"object":{}
+	}
+}

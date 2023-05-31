@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.tcm_kgsystem.mapper.AuditMapper" >
+  <resultMap id="BaseResultMap" type="com.example.tcm_kgsystem.entity.Audit" >
+    <id column="audit_id" property="auditId" jdbcType="BIGINT" />
+    <result column="audit_admin_id" property="auditAdminId" jdbcType="BIGINT" />
+    <result column="audit_user_id" property="auditUserId" jdbcType="BIGINT" />
+    <result column="audit_article_id" property="auditArticleId" jdbcType="BIGINT" />
+    <result column="audit_time" property="auditTime" jdbcType="TIMESTAMP" />
+    <result column="audit_have" property="auditHave" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    audit_id, audit_admin_id, audit_user_id, audit_article_id, audit_time, audit_have
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.example.tcm_kgsystem.entity.AuditExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from audit
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from audit
+    where audit_id = #{auditId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from audit
+    where audit_id = #{auditId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.example.tcm_kgsystem.entity.AuditExample" >
+    delete from audit
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.example.tcm_kgsystem.entity.Audit" >
+    insert into audit (audit_id, audit_admin_id, audit_user_id, 
+      audit_article_id, audit_time, audit_have
+      )
+    values (#{auditId,jdbcType=BIGINT}, #{auditAdminId,jdbcType=BIGINT}, #{auditUserId,jdbcType=BIGINT}, 
+      #{auditArticleId,jdbcType=BIGINT}, #{auditTime,jdbcType=TIMESTAMP}, #{auditHave,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.tcm_kgsystem.entity.Audit" >
+    insert into audit
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="auditId != null" >
+        audit_id,
+      </if>
+      <if test="auditAdminId != null" >
+        audit_admin_id,
+      </if>
+      <if test="auditUserId != null" >
+        audit_user_id,
+      </if>
+      <if test="auditArticleId != null" >
+        audit_article_id,
+      </if>
+      <if test="auditTime != null" >
+        audit_time,
+      </if>
+      <if test="auditHave != null" >
+        audit_have,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="auditId != null" >
+        #{auditId,jdbcType=BIGINT},
+      </if>
+      <if test="auditAdminId != null" >
+        #{auditAdminId,jdbcType=BIGINT},
+      </if>
+      <if test="auditUserId != null" >
+        #{auditUserId,jdbcType=BIGINT},
+      </if>
+      <if test="auditArticleId != null" >
+        #{auditArticleId,jdbcType=BIGINT},
+      </if>
+      <if test="auditTime != null" >
+        #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="auditHave != null" >
+        #{auditHave,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.example.tcm_kgsystem.entity.AuditExample" resultType="java.lang.Integer" >
+    select count(*) from audit
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update audit
+    <set >
+      <if test="record.auditId != null" >
+        audit_id = #{record.auditId,jdbcType=BIGINT},
+      </if>
+      <if test="record.auditAdminId != null" >
+        audit_admin_id = #{record.auditAdminId,jdbcType=BIGINT},
+      </if>
+      <if test="record.auditUserId != null" >
+        audit_user_id = #{record.auditUserId,jdbcType=BIGINT},
+      </if>
+      <if test="record.auditArticleId != null" >
+        audit_article_id = #{record.auditArticleId,jdbcType=BIGINT},
+      </if>
+      <if test="record.auditTime != null" >
+        audit_time = #{record.auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.auditHave != null" >
+        audit_have = #{record.auditHave,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update audit
+    set audit_id = #{record.auditId,jdbcType=BIGINT},
+      audit_admin_id = #{record.auditAdminId,jdbcType=BIGINT},
+      audit_user_id = #{record.auditUserId,jdbcType=BIGINT},
+      audit_article_id = #{record.auditArticleId,jdbcType=BIGINT},
+      audit_time = #{record.auditTime,jdbcType=TIMESTAMP},
+      audit_have = #{record.auditHave,jdbcType=INTEGER}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.tcm_kgsystem.entity.Audit" >
+    update audit
+    <set >
+      <if test="auditAdminId != null" >
+        audit_admin_id = #{auditAdminId,jdbcType=BIGINT},
+      </if>
+      <if test="auditUserId != null" >
+        audit_user_id = #{auditUserId,jdbcType=BIGINT},
+      </if>
+      <if test="auditArticleId != null" >
+        audit_article_id = #{auditArticleId,jdbcType=BIGINT},
+      </if>
+      <if test="auditTime != null" >
+        audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="auditHave != null" >
+        audit_have = #{auditHave,jdbcType=INTEGER},
+      </if>
+    </set>
+    where audit_id = #{auditId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.tcm_kgsystem.entity.Audit" >
+    update audit
+    set audit_admin_id = #{auditAdminId,jdbcType=BIGINT},
+      audit_user_id = #{auditUserId,jdbcType=BIGINT},
+      audit_article_id = #{auditArticleId,jdbcType=BIGINT},
+      audit_time = #{auditTime,jdbcType=TIMESTAMP},
+      audit_have = #{auditHave,jdbcType=INTEGER}
+    where audit_id = #{auditId,jdbcType=BIGINT}
+  </update>
+</mapper>

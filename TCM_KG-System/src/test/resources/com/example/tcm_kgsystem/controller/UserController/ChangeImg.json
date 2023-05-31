@@ -1,0 +1,11 @@
+{
+	"FileToUser":{
+		"file":{},
+		"userId":1
+	},
+	"TransportObject":{
+		"code":1,
+		"msg":"test",
+		"object":{}
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"String":"#",
+	"TransportObject":{
+		"code":1,
+		"msg":"test",
+		"object":{}
+	},
+	"int":1
+}

@@ -1,0 +1,14 @@
+{
+	"long":1,
+	"Result":{
+		"resultId":1,
+		"resultAdminId":1,
+		"resultUserId":1,
+		"resultType":"test",
+		"resultTime":1684146275569,
+		"resultHave":1,
+		"resultObjectId":1,
+		"resultObject":"test",
+		"resultReason":"test"
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"Admin":{
+		"adminId":1,
+		"adminName":"test",
+		"adminPassword":"test",
+		"adminAudit":1,
+		"adminResult":1
+	},
+	"TransportObject":{
+		"code":1,
+		"msg":"test",
+		"object":{}
+	}
+}

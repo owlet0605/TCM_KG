@@ -1,0 +1,20 @@
+{
+	"Like":{
+		"likeId":1,
+		"likeArticleId":1,
+		"likeUserId":1,
+		"likeType":"test",
+		"likeCommentId":1,
+		"likeTime":1684146405875
+	},
+	"List<Like>":[
+		{
+			"likeId":1,
+			"likeArticleId":1,
+			"likeUserId":1,
+			"likeType":"test",
+			"likeCommentId":1,
+			"likeTime":1684146405875
+		}
+	]
+}

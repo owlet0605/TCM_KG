@@ -1,0 +1,13 @@
+{
+	"Collect":{
+		"collectId":1,
+		"collectArticleId":1,
+		"collectUserId":1,
+		"collectTime":1684147170111
+	},
+	"TransportObject":{
+		"code":1,
+		"msg":"test",
+		"object":{}
+	}
+}

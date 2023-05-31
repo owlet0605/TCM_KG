@@ -1,0 +1,30 @@
+{
+	"Email":{
+		"userEmail":"test",
+		"code":"test",
+		"setTime":1684146420454,
+		"getTime":1684146420454
+	},
+	"List<User>":[
+		{
+			"userId":1,
+			"userName":"test",
+			"userPassword":"test",
+			"userSex":"test",
+			"userEmail":"test",
+			"userPhone":"test",
+			"userStatus":1,
+			"registerTime":1684146420454,
+			"userBirthday":1684146420454,
+			"userImg":"test",
+			"userFans":1,
+			"userConcern":1,
+			"userLike":1,
+			"userView":1,
+			"userSecurity":1,
+			"userToken":"test"
+		}
+	],
+	"String":"test",
+	"int":1
+}

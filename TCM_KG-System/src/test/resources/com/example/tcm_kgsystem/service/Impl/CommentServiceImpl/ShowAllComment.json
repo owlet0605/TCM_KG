@@ -1,0 +1,25 @@
+{
+	"Comment":{
+		"commentId":1,
+		"commentArticleId":1,
+		"commentUserId":1,
+		"commentTime":1684146508641,
+		"commentContext":"test",
+		"commentLike":1,
+		"commentTopId":1,
+		"commentForId":1
+	},
+	"int":1,
+	"List<Comment>":[
+		{
+			"commentId":1,
+			"commentArticleId":1,
+			"commentUserId":1,
+			"commentTime":1684146508657,
+			"commentContext":"test",
+			"commentLike":1,
+			"commentTopId":1,
+			"commentForId":1
+		}
+	]
+}

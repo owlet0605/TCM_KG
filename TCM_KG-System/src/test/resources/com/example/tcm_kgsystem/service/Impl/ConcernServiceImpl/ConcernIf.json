@@ -1,0 +1,27 @@
+{
+	"User":{
+		"userId":1,
+		"userName":"test",
+		"userPassword":"test",
+		"userSex":"test",
+		"userEmail":"test",
+		"userPhone":"test",
+		"userStatus":1,
+		"registerTime":1684146491685,
+		"userBirthday":1684146491685,
+		"userImg":"test",
+		"userFans":1,
+		"userConcern":1,
+		"userLike":1,
+		"userView":1,
+		"userSecurity":1,
+		"userToken":"test"
+	},
+	"List<Concern>":[
+		{
+			"concernId":1,
+			"concernUserId":1,
+			"concernedUserId":1
+		}
+	]
+}

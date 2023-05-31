@@ -1,0 +1,20 @@
+{
+	"Article":{
+		"articleId":1,
+		"articleUserId":1,
+		"articleTypeId":1,
+		"articleTitle":"test",
+		"articleTime":1684147213624,
+		"articleView":1,
+		"articleComment":1,
+		"articleLike":1,
+		"articleCollect":1,
+		"articleAudit":1,
+		"articleContext":"test"
+	},
+	"TransportObject":{
+		"code":1,
+		"msg":"test",
+		"object":{}
+	}
+}

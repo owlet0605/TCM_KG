@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.tcm_kgsystem.mapper.CommentMapper" >
+  <resultMap id="BaseResultMap" type="com.example.tcm_kgsystem.entity.Comment" >
+    <id column="comment_id" property="commentId" jdbcType="BIGINT" />
+    <result column="comment_article_id" property="commentArticleId" jdbcType="BIGINT" />
+    <result column="comment_user_id" property="commentUserId" jdbcType="BIGINT" />
+    <result column="comment_time" property="commentTime" jdbcType="TIMESTAMP" />
+    <result column="comment_context" property="commentContext" jdbcType="VARCHAR" />
+    <result column="comment_like" property="commentLike" jdbcType="INTEGER" />
+    <result column="comment_top_id" property="commentTopId" jdbcType="BIGINT" />
+    <result column="comment_for_id" property="commentForId" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    comment_id, comment_article_id, comment_user_id, comment_time, comment_context, comment_like, 
+    comment_top_id, comment_for_id
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.example.tcm_kgsystem.entity.CommentExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from comment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from comment
+    where comment_id = #{commentId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from comment
+    where comment_id = #{commentId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.example.tcm_kgsystem.entity.CommentExample" >
+    delete from comment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.example.tcm_kgsystem.entity.Comment" >
+    insert into comment (comment_id, comment_article_id, comment_user_id, 
+      comment_time, comment_context, comment_like, 
+      comment_top_id, comment_for_id)
+    values (#{commentId,jdbcType=BIGINT}, #{commentArticleId,jdbcType=BIGINT}, #{commentUserId,jdbcType=BIGINT}, 
+      #{commentTime,jdbcType=TIMESTAMP}, #{commentContext,jdbcType=VARCHAR}, #{commentLike,jdbcType=INTEGER}, 
+      #{commentTopId,jdbcType=BIGINT}, #{commentForId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.tcm_kgsystem.entity.Comment" >
+    insert into comment
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="commentId != null" >
+        comment_id,
+      </if>
+      <if test="commentArticleId != null" >
+        comment_article_id,
+      </if>
+      <if test="commentUserId != null" >
+        comment_user_id,
+      </if>
+      <if test="commentTime != null" >
+        comment_time,
+      </if>
+      <if test="commentContext != null" >
+        comment_context,
+      </if>
+      <if test="commentLike != null" >
+        comment_like,
+      </if>
+      <if test="commentTopId != null" >
+        comment_top_id,
+      </if>
+      <if test="commentForId != null" >
+        comment_for_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="commentId != null" >
+        #{commentId,jdbcType=BIGINT},
+      </if>
+      <if test="commentArticleId != null" >
+        #{commentArticleId,jdbcType=BIGINT},
+      </if>
+      <if test="commentUserId != null" >
+        #{commentUserId,jdbcType=BIGINT},
+      </if>
+      <if test="commentTime != null" >
+        #{commentTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="commentContext != null" >
+        #{commentContext,jdbcType=VARCHAR},
+      </if>
+      <if test="commentLike != null" >
+        #{commentLike,jdbcType=INTEGER},
+      </if>
+      <if test="commentTopId != null" >
+        #{commentTopId,jdbcType=BIGINT},
+      </if>
+      <if test="commentForId != null" >
+        #{commentForId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.example.tcm_kgsystem.entity.CommentExample" resultType="java.lang.Integer" >
+    select count(*) from comment
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update comment
+    <set >
+      <if test="record.commentId != null" >
+        comment_id = #{record.commentId,jdbcType=BIGINT},
+      </if>
+      <if test="record.commentArticleId != null" >
+        comment_article_id = #{record.commentArticleId,jdbcType=BIGINT},
+      </if>
+      <if test="record.commentUserId != null" >
+        comment_user_id = #{record.commentUserId,jdbcType=BIGINT},
+      </if>
+      <if test="record.commentTime != null" >
+        comment_time = #{record.commentTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.commentContext != null" >
+        comment_context = #{record.commentContext,jdbcType=VARCHAR},
+      </if>
+      <if test="record.commentLike != null" >
+        comment_like = #{record.commentLike,jdbcType=INTEGER},
+      </if>
+      <if test="record.commentTopId != null" >
+        comment_top_id = #{record.commentTopId,jdbcType=BIGINT},
+      </if>
+      <if test="record.commentForId != null" >
+        comment_for_id = #{record.commentForId,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update comment
+    set comment_id = #{record.commentId,jdbcType=BIGINT},
+      comment_article_id = #{record.commentArticleId,jdbcType=BIGINT},
+      comment_user_id = #{record.commentUserId,jdbcType=BIGINT},
+      comment_time = #{record.commentTime,jdbcType=TIMESTAMP},
+      comment_context = #{record.commentContext,jdbcType=VARCHAR},
+      comment_like = #{record.commentLike,jdbcType=INTEGER},
+      comment_top_id = #{record.commentTopId,jdbcType=BIGINT},
+      comment_for_id = #{record.commentForId,jdbcType=BIGINT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.tcm_kgsystem.entity.Comment" >
+    update comment
+    <set >
+      <if test="commentArticleId != null" >
+        comment_article_id = #{commentArticleId,jdbcType=BIGINT},
+      </if>
+      <if test="commentUserId != null" >
+        comment_user_id = #{commentUserId,jdbcType=BIGINT},
+      </if>
+      <if test="commentTime != null" >
+        comment_time = #{commentTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="commentContext != null" >
+        comment_context = #{commentContext,jdbcType=VARCHAR},
+      </if>
+      <if test="commentLike != null" >
+        comment_like = #{commentLike,jdbcType=INTEGER},
+      </if>
+      <if test="commentTopId != null" >
+        comment_top_id = #{commentTopId,jdbcType=BIGINT},
+      </if>
+      <if test="commentForId != null" >
+        comment_for_id = #{commentForId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where comment_id = #{commentId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.tcm_kgsystem.entity.Comment" >
+    update comment
+    set comment_article_id = #{commentArticleId,jdbcType=BIGINT},
+      comment_user_id = #{commentUserId,jdbcType=BIGINT},
+      comment_time = #{commentTime,jdbcType=TIMESTAMP},
+      comment_context = #{commentContext,jdbcType=VARCHAR},
+      comment_like = #{commentLike,jdbcType=INTEGER},
+      comment_top_id = #{commentTopId,jdbcType=BIGINT},
+      comment_for_id = #{commentForId,jdbcType=BIGINT}
+    where comment_id = #{commentId,jdbcType=BIGINT}
+  </update>
+</mapper>

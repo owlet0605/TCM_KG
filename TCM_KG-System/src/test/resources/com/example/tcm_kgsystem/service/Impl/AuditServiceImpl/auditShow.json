@@ -1,0 +1,24 @@
+{
+	"Audit":{
+		"auditId":1,
+		"auditAdminId":1,
+		"auditUserId":1,
+		"auditArticleId":1,
+		"auditTime":1684146565761,
+		"auditHave":1
+	},
+	"Article":{
+		"articleId":1,
+		"articleUserId":1,
+		"articleTypeId":1,
+		"articleTitle":"test",
+		"articleTime":1684146565761,
+		"articleView":1,
+		"articleComment":1,
+		"articleLike":1,
+		"articleCollect":1,
+		"articleAudit":1,
+		"articleContext":"test"
+	},
+	"long":1
+}

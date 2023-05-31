@@ -1,0 +1,18 @@
+{
+	"List<ChatLink>":[
+		{
+			"chatLinkId":1,
+			"fromUserId":1,
+			"toUserId":1,
+			"chatLinkTime":1684146543246,
+			"chatLinkLastTime":1684146543246,
+			"fromWindow":1,
+			"toWindow":1,
+			"fromUnread":1,
+			"chatLinkStatus":1,
+			"toUnread":1
+		}
+	],
+	"long":1,
+	"int":1
+}

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.tcm_kgsystem.mapper.ConcernMapper" >
+  <resultMap id="BaseResultMap" type="com.example.tcm_kgsystem.entity.Concern" >
+    <id column="concern_id" property="concernId" jdbcType="BIGINT" />
+    <result column="concern_user_id" property="concernUserId" jdbcType="BIGINT" />
+    <result column="concerned_user_id" property="concernedUserId" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    concern_id, concern_user_id, concerned_user_id
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.example.tcm_kgsystem.entity.ConcernExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from concern
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from concern
+    where concern_id = #{concernId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from concern
+    where concern_id = #{concernId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.example.tcm_kgsystem.entity.ConcernExample" >
+    delete from concern
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.example.tcm_kgsystem.entity.Concern" >
+    insert into concern (concern_id, concern_user_id, concerned_user_id
+      )
+    values (#{concernId,jdbcType=BIGINT}, #{concernUserId,jdbcType=BIGINT}, #{concernedUserId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.tcm_kgsystem.entity.Concern" >
+    insert into concern
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="concernId != null" >
+        concern_id,
+      </if>
+      <if test="concernUserId != null" >
+        concern_user_id,
+      </if>
+      <if test="concernedUserId != null" >
+        concerned_user_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="concernId != null" >
+        #{concernId,jdbcType=BIGINT},
+      </if>
+      <if test="concernUserId != null" >
+        #{concernUserId,jdbcType=BIGINT},
+      </if>
+      <if test="concernedUserId != null" >
+        #{concernedUserId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.example.tcm_kgsystem.entity.ConcernExample" resultType="java.lang.Integer" >
+    select count(*) from concern
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update concern
+    <set >
+      <if test="record.concernId != null" >
+        concern_id = #{record.concernId,jdbcType=BIGINT},
+      </if>
+      <if test="record.concernUserId != null" >
+        concern_user_id = #{record.concernUserId,jdbcType=BIGINT},
+      </if>
+      <if test="record.concernedUserId != null" >
+        concerned_user_id = #{record.concernedUserId,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update concern
+    set concern_id = #{record.concernId,jdbcType=BIGINT},
+      concern_user_id = #{record.concernUserId,jdbcType=BIGINT},
+      concerned_user_id = #{record.concernedUserId,jdbcType=BIGINT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.tcm_kgsystem.entity.Concern" >
+    update concern
+    <set >
+      <if test="concernUserId != null" >
+        concern_user_id = #{concernUserId,jdbcType=BIGINT},
+      </if>
+      <if test="concernedUserId != null" >
+        concerned_user_id = #{concernedUserId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where concern_id = #{concernId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.tcm_kgsystem.entity.Concern" >
+    update concern
+    set concern_user_id = #{concernUserId,jdbcType=BIGINT},
+      concerned_user_id = #{concernedUserId,jdbcType=BIGINT}
+    where concern_id = #{concernId,jdbcType=BIGINT}
+  </update>
+</mapper>

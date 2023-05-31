@@ -1,0 +1,24 @@
+{
+	"User":{
+		"userId":1,
+		"userName":"test",
+		"userPassword":"test",
+		"userSex":"test",
+		"userEmail":"test",
+		"userPhone":"test",
+		"userStatus":1,
+		"registerTime":1684143088603,
+		"userBirthday":1684143088603,
+		"userImg":"test",
+		"userFans":1,
+		"userConcern":1,
+		"userLike":1,
+		"userView":1,
+		"userSecurity":1,
+		"userToken":"test"
+	},
+	"List<User>":[],
+	"String":"11111111111",
+	"long":1,
+	"int":1
+}

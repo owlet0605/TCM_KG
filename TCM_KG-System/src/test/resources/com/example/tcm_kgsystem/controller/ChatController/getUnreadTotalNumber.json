@@ -1,0 +1,19 @@
+{
+	"ChatLink":{
+		"chatLinkId":1,
+		"fromUserId":1,
+		"toUserId":1,
+		"chatLinkTime":1684147184677,
+		"chatLinkLastTime":1684147184677,
+		"fromWindow":1,
+		"toWindow":1,
+		"fromUnread":1,
+		"chatLinkStatus":1,
+		"toUnread":1
+	},
+	"TransportObject":{
+		"code":1,
+		"msg":"test",
+		"object":{}
+	}
+}

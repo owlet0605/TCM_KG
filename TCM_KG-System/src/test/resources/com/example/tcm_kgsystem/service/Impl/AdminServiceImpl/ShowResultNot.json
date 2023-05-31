@@ -1,0 +1,17 @@
+{
+	"List<Result>":[
+		{
+			"resultId":1,
+			"resultAdminId":1,
+			"resultUserId":1,
+			"resultType":"test",
+			"resultTime":1684146734716,
+			"resultHave":1,
+			"resultObjectId":1,
+			"resultObject":"test",
+			"resultReason":"test"
+		}
+	],
+	"long":1,
+	"int":1
+}

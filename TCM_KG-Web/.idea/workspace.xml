@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="63f9d222-5381-4a2d-9388-86c78b617282" name="Changes" comment="feat: add">
+      <change beforePath="$PROJECT_DIR$/src/api/chat/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/chat/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/UserHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/UserHeader.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/article/ArticleDetail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/article/ArticleDetail.vue" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectId" id="2MPVwolCXYf3GZfvkKiy8eojnuD" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\zei\Desktop\tcm_kg-web\src\view\user" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\zei\Desktop\tcm_kg-web\src\components\user" />
+      <recent name="C:\Users\zei\Desktop\tcm_kg-web\src\view\phone" />
+      <recent name="C:\Users\zei\Desktop\tcm_kg-web\src\view\email" />
+      <recent name="C:\Users\zei\Desktop\tcm_kg-web\src\components\tcmKg" />
+      <recent name="C:\Users\zei\Desktop\tcm_kg-web\src\components\header" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.npm serve">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:8080">
+      <method v="2" />
+    </configuration>
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="npm serve" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="serve" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.build" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="63f9d222-5381-4a2d-9388-86c78b617282" name="Changes" comment="" />
+      <created>1677669450073</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1677669450073</updated>
+      <workItem from="1677669450535" duration="256000" />
+      <workItem from="1677728441354" duration="9252000" />
+      <workItem from="1677744615773" duration="2811000" />
+      <workItem from="1678424114073" duration="8400000" />
+      <workItem from="1679206043043" duration="17024000" />
+      <workItem from="1679281362166" duration="14561000" />
+      <workItem from="1679366207447" duration="12135000" />
+      <workItem from="1679475893119" duration="11925000" />
+      <workItem from="1679543936409" duration="11961000" />
+      <workItem from="1679640883623" duration="9123000" />
+      <workItem from="1679710799319" duration="10913000" />
+      <workItem from="1679741817092" duration="2022000" />
+      <workItem from="1679800462598" duration="16353000" />
+      <workItem from="1679836654909" duration="167000" />
+      <workItem from="1679887804095" duration="5661000" />
+      <workItem from="1679905608417" duration="5554000" />
+      <workItem from="1679920477881" duration="218000" />
+      <workItem from="1679975227569" duration="2909000" />
+      <workItem from="1679978382061" duration="23507000" />
+      <workItem from="1680066840546" duration="11013000" />
+      <workItem from="1680151412591" duration="22735000" />
+      <workItem from="1680239213747" duration="4543000" />
+      <workItem from="1680322983731" duration="20097000" />
+      <workItem from="1680410592510" duration="9644000" />
+      <workItem from="1680428196195" duration="2358000" />
+      <workItem from="1680494099531" duration="5713000" />
+      <workItem from="1680523966498" duration="2586000" />
+      <workItem from="1680586002285" duration="14635000" />
+      <workItem from="1680667700816" duration="19703000" />
+      <workItem from="1680755841677" duration="673000" />
+      <workItem from="1680761275845" duration="6257000" />
+      <workItem from="1680776601663" duration="9088000" />
+      <workItem from="1680840387402" duration="14421000" />
+      <workItem from="1680865280160" duration="674000" />
+      <workItem from="1680924044224" duration="1968000" />
+      <workItem from="1680935538611" duration="294000" />
+      <workItem from="1681006152862" duration="2420000" />
+      <workItem from="1681013390140" duration="1866000" />
+      <workItem from="1681019305876" duration="11579000" />
+      <workItem from="1681040274219" duration="5567000" />
+      <workItem from="1681094057892" duration="4264000" />
+      <workItem from="1681099422942" duration="3598000" />
+      <workItem from="1681211896484" duration="1302000" />
+      <workItem from="1681287239423" duration="7502000" />
+      <workItem from="1681364403847" duration="17013000" />
+      <workItem from="1681388864623" duration="118000" />
+      <workItem from="1681446838715" duration="13492000" />
+      <workItem from="1681527990118" duration="14530000" />
+      <workItem from="1681707882872" duration="16156000" />
+      <workItem from="1681788654916" duration="17978000" />
+      <workItem from="1681863249843" duration="284000" />
+      <workItem from="1681864460230" duration="1900000" />
+      <workItem from="1681872917536" duration="18818000" />
+      <workItem from="1681957165801" duration="20363000" />
+      <workItem from="1681990243700" duration="765000" />
+      <workItem from="1681992678521" duration="448000" />
+      <workItem from="1682080123272" duration="2077000" />
+      <workItem from="1682136179303" duration="2410000" />
+      <workItem from="1682140889875" duration="2600000" />
+      <workItem from="1682146953615" duration="164000" />
+      <workItem from="1683104750315" duration="185000" />
+      <workItem from="1683105042275" duration="667000" />
+      <workItem from="1683170666017" duration="4968000" />
+      <workItem from="1683251366525" duration="9839000" />
+      <workItem from="1683713095324" duration="3560000" />
+      <workItem from="1683766698151" duration="4925000" />
+      <workItem from="1683876581554" duration="117000" />
+      <workItem from="1683881910097" duration="2866000" />
+      <workItem from="1683942939181" duration="20055000" />
+      <workItem from="1683970345940" duration="927000" />
+      <workItem from="1683974039500" duration="5438000" />
+      <workItem from="1684029364916" duration="33610000" />
+      <workItem from="1684112735883" duration="5368000" />
+      <workItem from="1684122848609" duration="11856000" />
+      <workItem from="1684377885905" duration="3811000" />
+      <workItem from="1684403326335" duration="717000" />
+      <workItem from="1684410236691" duration="5775000" />
+      <workItem from="1684468750358" duration="2559000" />
+      <workItem from="1684588425936" duration="147000" />
+      <workItem from="1684658145929" duration="2457000" />
+      <workItem from="1684671815059" duration="5247000" />
+      <workItem from="1684739747064" duration="10877000" />
+      <workItem from="1684811025897" duration="2103000" />
+      <workItem from="1684921144085" duration="1435000" />
+      <workItem from="1684992851031" duration="3165000" />
+      <workItem from="1685008670775" duration="552000" />
+    </task>
+    <task id="LOCAL-00001" summary="Changes">
+      <created>1679836740382</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1679836740382</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add">
+      <created>1679836797143</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1679836797143</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add">
+      <created>1679920156902</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1679920156902</updated>
+    </task>
+    <task id="LOCAL-00004" summary="add">
+      <created>1680012507701</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680012507701</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: add">
+      <created>1680348482176</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1680348482176</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: add">
+      <created>1680348580763</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1680348580763</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: add">
+      <created>1680865824557</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1680865824557</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: add">
+      <created>1680865874806</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1680865874806</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat: add">
+      <created>1681047001285</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1681047001285</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat: add">
+      <created>1681047022249</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1681047022249</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat: add">
+      <created>1681388957221</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1681388957221</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat: add">
+      <created>1681388976944</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1681388976944</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat: add">
+      <created>1681990953064</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1681990953064</updated>
+    </task>
+    <task id="LOCAL-00014" summary="feat: add">
+      <created>1681990989426</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1681990989426</updated>
+    </task>
+    <task id="LOCAL-00015" summary="feat: add">
+      <created>1682147092036</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1682147092036</updated>
+    </task>
+    <task id="LOCAL-00016" summary="feat: add">
+      <created>1684416661316</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1684416661316</updated>
+    </task>
+    <task id="LOCAL-00017" summary="feat: add">
+      <created>1684416730810</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1684416730810</updated>
+    </task>
+    <task id="LOCAL-00018" summary="feat: add">
+      <created>1684813604068</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1684813604068</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Changes" />
+    <MESSAGE value="add" />
+    <MESSAGE value="feat: add" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add" />
+  </component>
+</project>

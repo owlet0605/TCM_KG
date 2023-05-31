@@ -1,0 +1,13 @@
+{
+	"TransportObject":{
+		"code":1,
+		"msg":"test",
+		"object":{}
+	},
+	"ArticleType":{
+		"articleTypeId":1,
+		"articleTypeTag":"test",
+		"articleTypeNum":1,
+		"articleTypeDescribe":"test"
+	}
+}

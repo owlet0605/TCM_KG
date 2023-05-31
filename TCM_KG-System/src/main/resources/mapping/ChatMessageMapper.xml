@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.tcm_kgsystem.mapper.ChatMessageMapper" >
+  <resultMap id="BaseResultMap" type="com.example.tcm_kgsystem.entity.ChatMessage" >
+    <id column="chat_message_id" property="chatMessageId" jdbcType="BIGINT" />
+    <result column="chat_link_id" property="chatLinkId" jdbcType="BIGINT" />
+    <result column="chat_message_content" property="chatMessageContent" jdbcType="VARCHAR" />
+    <result column="chat_message_time" property="chatMessageTime" jdbcType="TIMESTAMP" />
+    <result column="chat_message_type" property="chatMessageType" jdbcType="VARCHAR" />
+    <result column="chat_message_latest" property="chatMessageLatest" jdbcType="INTEGER" />
+    <result column="from_user_id" property="fromUserId" jdbcType="BIGINT" />
+    <result column="to_user_id" property="toUserId" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    chat_message_id, chat_link_id, chat_message_content, chat_message_time, chat_message_type, 
+    chat_message_latest, from_user_id, to_user_id
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.example.tcm_kgsystem.entity.ChatMessageExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from chat_message
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from chat_message
+    where chat_message_id = #{chatMessageId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from chat_message
+    where chat_message_id = #{chatMessageId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.example.tcm_kgsystem.entity.ChatMessageExample" >
+    delete from chat_message
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.example.tcm_kgsystem.entity.ChatMessage" >
+    insert into chat_message (chat_message_id, chat_link_id, chat_message_content, 
+      chat_message_time, chat_message_type, chat_message_latest, 
+      from_user_id, to_user_id)
+    values (#{chatMessageId,jdbcType=BIGINT}, #{chatLinkId,jdbcType=BIGINT}, #{chatMessageContent,jdbcType=VARCHAR}, 
+      #{chatMessageTime,jdbcType=TIMESTAMP}, #{chatMessageType,jdbcType=VARCHAR}, #{chatMessageLatest,jdbcType=INTEGER}, 
+      #{fromUserId,jdbcType=BIGINT}, #{toUserId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.tcm_kgsystem.entity.ChatMessage" >
+    insert into chat_message
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="chatMessageId != null" >
+        chat_message_id,
+      </if>
+      <if test="chatLinkId != null" >
+        chat_link_id,
+      </if>
+      <if test="chatMessageContent != null" >
+        chat_message_content,
+      </if>
+      <if test="chatMessageTime != null" >
+        chat_message_time,
+      </if>
+      <if test="chatMessageType != null" >
+        chat_message_type,
+      </if>
+      <if test="chatMessageLatest != null" >
+        chat_message_latest,
+      </if>
+      <if test="fromUserId != null" >
+        from_user_id,
+      </if>
+      <if test="toUserId != null" >
+        to_user_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="chatMessageId != null" >
+        #{chatMessageId,jdbcType=BIGINT},
+      </if>
+      <if test="chatLinkId != null" >
+        #{chatLinkId,jdbcType=BIGINT},
+      </if>
+      <if test="chatMessageContent != null" >
+        #{chatMessageContent,jdbcType=VARCHAR},
+      </if>
+      <if test="chatMessageTime != null" >
+        #{chatMessageTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="chatMessageType != null" >
+        #{chatMessageType,jdbcType=VARCHAR},
+      </if>
+      <if test="chatMessageLatest != null" >
+        #{chatMessageLatest,jdbcType=INTEGER},
+      </if>
+      <if test="fromUserId != null" >
+        #{fromUserId,jdbcType=BIGINT},
+      </if>
+      <if test="toUserId != null" >
+        #{toUserId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.example.tcm_kgsystem.entity.ChatMessageExample" resultType="java.lang.Integer" >
+    select count(*) from chat_message
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update chat_message
+    <set >
+      <if test="record.chatMessageId != null" >
+        chat_message_id = #{record.chatMessageId,jdbcType=BIGINT},
+      </if>
+      <if test="record.chatLinkId != null" >
+        chat_link_id = #{record.chatLinkId,jdbcType=BIGINT},
+      </if>
+      <if test="record.chatMessageContent != null" >
+        chat_message_content = #{record.chatMessageContent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chatMessageTime != null" >
+        chat_message_time = #{record.chatMessageTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.chatMessageType != null" >
+        chat_message_type = #{record.chatMessageType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chatMessageLatest != null" >
+        chat_message_latest = #{record.chatMessageLatest,jdbcType=INTEGER},
+      </if>
+      <if test="record.fromUserId != null" >
+        from_user_id = #{record.fromUserId,jdbcType=BIGINT},
+      </if>
+      <if test="record.toUserId != null" >
+        to_user_id = #{record.toUserId,jdbcType=BIGINT},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update chat_message
+    set chat_message_id = #{record.chatMessageId,jdbcType=BIGINT},
+      chat_link_id = #{record.chatLinkId,jdbcType=BIGINT},
+      chat_message_content = #{record.chatMessageContent,jdbcType=VARCHAR},
+      chat_message_time = #{record.chatMessageTime,jdbcType=TIMESTAMP},
+      chat_message_type = #{record.chatMessageType,jdbcType=VARCHAR},
+      chat_message_latest = #{record.chatMessageLatest,jdbcType=INTEGER},
+      from_user_id = #{record.fromUserId,jdbcType=BIGINT},
+      to_user_id = #{record.toUserId,jdbcType=BIGINT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.tcm_kgsystem.entity.ChatMessage" >
+    update chat_message
+    <set >
+      <if test="chatLinkId != null" >
+        chat_link_id = #{chatLinkId,jdbcType=BIGINT},
+      </if>
+      <if test="chatMessageContent != null" >
+        chat_message_content = #{chatMessageContent,jdbcType=VARCHAR},
+      </if>
+      <if test="chatMessageTime != null" >
+        chat_message_time = #{chatMessageTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="chatMessageType != null" >
+        chat_message_type = #{chatMessageType,jdbcType=VARCHAR},
+      </if>
+      <if test="chatMessageLatest != null" >
+        chat_message_latest = #{chatMessageLatest,jdbcType=INTEGER},
+      </if>
+      <if test="fromUserId != null" >
+        from_user_id = #{fromUserId,jdbcType=BIGINT},
+      </if>
+      <if test="toUserId != null" >
+        to_user_id = #{toUserId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where chat_message_id = #{chatMessageId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.tcm_kgsystem.entity.ChatMessage" >
+    update chat_message
+    set chat_link_id = #{chatLinkId,jdbcType=BIGINT},
+      chat_message_content = #{chatMessageContent,jdbcType=VARCHAR},
+      chat_message_time = #{chatMessageTime,jdbcType=TIMESTAMP},
+      chat_message_type = #{chatMessageType,jdbcType=VARCHAR},
+      chat_message_latest = #{chatMessageLatest,jdbcType=INTEGER},
+      from_user_id = #{fromUserId,jdbcType=BIGINT},
+      to_user_id = #{toUserId,jdbcType=BIGINT}
+    where chat_message_id = #{chatMessageId,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="bca324e7-06de-4758-a4d3-3ae3faeebf0c" name="变更" comment="feat: add" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Yml File" />
+        <option value="spring-beans.schema" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\JetBrains\IntelliJ IDEA 2021.2.1\apache-maven-3.6.3\apache-maven-repo" />
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\JetBrains\IntelliJ IDEA 2021.2.1\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectId" id="2MJP59ylsAi54GQOYMiPUl4nTRj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="android.sdk.path" value="D:/android/android-sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/resources/com/example/tcm_kgsystem/service/Impl/ChatServiceImpl" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="SDK" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.36984688" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\zei\Desktop\TCM_KGSystem\src\test\resources\com\example\tcm_kgsystem\service\Impl\ChatServiceImpl" />
+      <recent name="C:\Users\zei\Desktop\TCM_KGSystem\src\test\resources\com\example\tcm_kgsystem\service\Impl\EmailServiceImpl" />
+      <recent name="C:\Users\zei\Desktop\TCM_KGSystem\src\test\resources\com\example\tcm_kgsystem\service\Impl\TcmServiceImpl" />
+      <recent name="C:\Users\zei\Desktop\TCM_KGSystem\src\test\resources\com\example\tcm_kgsystem\service\Impl\LikeServiceImpl" />
+      <recent name="C:\Users\zei\Desktop\TCM_KGSystem\src\test\resources\com\example\tcm_kgsystem\service\Impl\ArticleServiceImpl" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.TcmKgSystemApplication">
+    <configuration name="DataMake" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.tcm_kgsystem.DataMake" />
+      <module name="TCM_KGSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.tcm_kgsystem.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.tcm_kgsystem.test" />
+      <module name="TCM_KGSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.tcm_kgsystem.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TcmKgSystemApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="TCM_KGSystem" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.tcm_kgsystem.TcmKgSystemApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="应用程序.test" />
+        <item itemvalue="应用程序.DataMake" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="bca324e7-06de-4758-a4d3-3ae3faeebf0c" name="变更" comment="" />
+      <created>1677482537724</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1677482537724</updated>
+      <workItem from="1677482544143" duration="2047000" />
+      <workItem from="1677484703372" duration="5343000" />
+      <workItem from="1677560304863" duration="4591000" />
+      <workItem from="1677569543162" duration="2226000" />
+      <workItem from="1677580702588" duration="1752000" />
+      <workItem from="1677585686916" duration="1241000" />
+      <workItem from="1677646221191" duration="2390000" />
+      <workItem from="1677648707373" duration="5854000" />
+      <workItem from="1677745747759" duration="10060000" />
+      <workItem from="1677821956286" duration="12470000" />
+      <workItem from="1677905553235" duration="14214000" />
+      <workItem from="1678076243516" duration="6963000" />
+      <workItem from="1678097740634" duration="3543000" />
+      <workItem from="1678162684128" duration="13339000" />
+      <workItem from="1678194098168" duration="1141000" />
+      <workItem from="1678346977766" duration="10776000" />
+      <workItem from="1678417246147" duration="1605000" />
+      <workItem from="1678422827563" duration="1763000" />
+      <workItem from="1678435636561" duration="623000" />
+      <workItem from="1678444546462" duration="4889000" />
+      <workItem from="1678504940973" duration="12828000" />
+      <workItem from="1678521497995" duration="8149000" />
+      <workItem from="1678531789507" duration="2998000" />
+      <workItem from="1678688410029" duration="15123000" />
+      <workItem from="1678757631025" duration="11559000" />
+      <workItem from="1678844926836" duration="601000" />
+      <workItem from="1678943041871" duration="1498000" />
+      <workItem from="1679026997840" duration="1044000" />
+      <workItem from="1679040382164" duration="2694000" />
+      <workItem from="1679206632389" duration="4701000" />
+      <workItem from="1679281459917" duration="11814000" />
+      <workItem from="1679365574572" duration="9460000" />
+      <workItem from="1679482436757" duration="6528000" />
+      <workItem from="1679544034844" duration="15228000" />
+      <workItem from="1679641670207" duration="3395000" />
+      <workItem from="1679710910956" duration="4288000" />
+      <workItem from="1679750906398" duration="199000" />
+      <workItem from="1679752365096" duration="683000" />
+      <workItem from="1679800965032" duration="8748000" />
+      <workItem from="1679836368731" duration="217000" />
+      <workItem from="1679836844366" duration="10000" />
+      <workItem from="1679889190093" duration="1801000" />
+      <workItem from="1679919986512" duration="140000" />
+      <workItem from="1679980982480" duration="5960000" />
+      <workItem from="1679991620160" duration="1716000" />
+      <workItem from="1679998909717" duration="6398000" />
+      <workItem from="1680058984998" duration="2672000" />
+      <workItem from="1680069110942" duration="5268000" />
+      <workItem from="1680147662689" duration="3398000" />
+      <workItem from="1680152027977" duration="3444000" />
+      <workItem from="1680344672943" duration="1739000" />
+      <workItem from="1680505740945" duration="13794000" />
+      <workItem from="1680927999297" duration="376000" />
+      <workItem from="1681017403992" duration="6574000" />
+      <workItem from="1681045961655" duration="851000" />
+      <workItem from="1681093921896" duration="4293000" />
+      <workItem from="1681098998791" duration="3208000" />
+      <workItem from="1681364700736" duration="6033000" />
+      <workItem from="1681387142322" duration="1005000" />
+      <workItem from="1681447867954" duration="2933000" />
+      <workItem from="1681529894114" duration="3620000" />
+      <workItem from="1681712346602" duration="6729000" />
+      <workItem from="1681788760949" duration="2684000" />
+      <workItem from="1681863412869" duration="84000" />
+      <workItem from="1681872761365" duration="1522000" />
+      <workItem from="1681957482742" duration="3352000" />
+      <workItem from="1682042588511" duration="30280000" />
+      <workItem from="1682083740719" duration="4092000" />
+      <workItem from="1682126564748" duration="14207000" />
+      <workItem from="1683104638319" duration="1032000" />
+      <workItem from="1683170764753" duration="1856000" />
+      <workItem from="1683244681314" duration="1532000" />
+      <workItem from="1683257219372" duration="2462000" />
+      <workItem from="1683426357822" duration="6369000" />
+      <workItem from="1683509920211" duration="589000" />
+      <workItem from="1683688229592" duration="3458000" />
+      <workItem from="1683709216539" duration="1409000" />
+      <workItem from="1683788538424" duration="6021000" />
+      <workItem from="1683801719130" duration="4773000" />
+      <workItem from="1683875149618" duration="881000" />
+      <workItem from="1683942788108" duration="8977000" />
+      <workItem from="1683972572496" duration="9803000" />
+      <workItem from="1684026470762" duration="32422000" />
+      <workItem from="1684110563174" duration="410000" />
+      <workItem from="1684111738008" duration="5025000" />
+      <workItem from="1684142387441" duration="428000" />
+      <workItem from="1684142879777" duration="3087000" />
+      <workItem from="1684146030080" duration="1527000" />
+      <workItem from="1684147596424" duration="9694000" />
+      <workItem from="1684204751365" duration="3289000" />
+      <workItem from="1684219983929" duration="4517000" />
+      <workItem from="1684417406225" duration="794000" />
+      <workItem from="1684462820663" duration="7024000" />
+      <workItem from="1684587655782" duration="683000" />
+      <workItem from="1684588603023" duration="672000" />
+      <workItem from="1684656570431" duration="2177000" />
+      <workItem from="1684670714144" duration="4764000" />
+      <workItem from="1684732681883" duration="10626000" />
+      <workItem from="1684759041766" duration="4720000" />
+      <workItem from="1684813750447" duration="269000" />
+      <workItem from="1684822838800" duration="2996000" />
+      <workItem from="1684827288587" duration="3952000" />
+      <workItem from="1684844758751" duration="2885000" />
+      <workItem from="1684886585404" duration="8533000" />
+      <workItem from="1684920941218" duration="1549000" />
+      <workItem from="1684924661944" duration="109000" />
+      <workItem from="1684992721719" duration="2602000" />
+      <workItem from="1685008467651" duration="749000" />
+      <workItem from="1685410952602" duration="137000" />
+      <workItem from="1685508234044" duration="333000" />
+    </task>
+    <task id="LOCAL-00001" summary="feat: add">
+      <created>1679752483897</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1679752483897</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: add">
+      <created>1679836534703</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1679836534703</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: add">
+      <created>1680012144498</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1680012144498</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: add">
+      <created>1681046882951</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681046882951</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat: add">
+      <created>1681388453801</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1681388453801</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: add">
+      <created>1681388499402</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681388499402</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: add">
+      <created>1681990572302</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1681990572302</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat: add">
+      <created>1682082557891</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1682082557891</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat: add">
+      <created>1682082576448</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1682082576448</updated>
+    </task>
+    <task id="LOCAL-00010" summary="feat: add">
+      <created>1682087041001</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1682087041001</updated>
+    </task>
+    <task id="LOCAL-00011" summary="feat: add">
+      <created>1682146557002</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1682146557002</updated>
+    </task>
+    <task id="LOCAL-00012" summary="feat: add">
+      <created>1684813888863</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1684813888863</updated>
+    </task>
+    <task id="LOCAL-00013" summary="feat: add">
+      <created>1684895194347</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1684895194347</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="feat: add" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

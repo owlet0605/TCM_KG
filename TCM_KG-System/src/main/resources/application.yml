@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/tcm_kg
+    username: root
+    password: rg0608
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  mail:
+    email: rfh_ow1et@163.com
+    host: smtp.163.com
+    port: 465
+    username: TCM_KGSystem
+    password: GHGDTEEEEYNYWAXO
+
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+
+server:
+  port: 8080
+  multipart:
+    max-file-size: 300MB
+    max-request-size: 500MB
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true

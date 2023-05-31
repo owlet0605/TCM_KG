@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.tcm_kgsystem.mapper.TcmMapper" >
+  <resultMap id="BaseResultMap" type="com.example.tcm_kgsystem.entity.Tcm" >
+    <id column="tcm_id" property="tcmId" jdbcType="BIGINT" />
+    <result column="tcm_name_zh" property="tcmNameZh" jdbcType="VARCHAR" />
+    <result column="tcm_name_en" property="tcmNameEn" jdbcType="VARCHAR" />
+    <result column="tcm_pinyin" property="tcmPinyin" jdbcType="VARCHAR" />
+    <result column="tcm_inductive" property="tcmInductive" jdbcType="VARCHAR" />
+    <result column="tcm_taste" property="tcmTaste" jdbcType="VARCHAR" />
+    <result column="tcm_alias" property="tcmAlias" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.example.tcm_kgsystem.entity.TcmWithBLOBs" extends="BaseResultMap" >
+    <result column="tcm_come" property="tcmCome" jdbcType="LONGVARCHAR" />
+    <result column="tcm_traits" property="tcmTraits" jdbcType="LONGVARCHAR" />
+    <result column="tcm_plant" property="tcmPlant" jdbcType="LONGVARCHAR" />
+    <result column="tcm_distribution" property="tcmDistribution" jdbcType="LONGVARCHAR" />
+    <result column="tcm_produce" property="tcmProduce" jdbcType="LONGVARCHAR" />
+    <result column="tcm_note" property="tcmNote" jdbcType="LONGVARCHAR" />
+    <result column="tcm_function" property="tcmFunction" jdbcType="LONGVARCHAR" />
+    <result column="tcm_clinical" property="tcmClinical" jdbcType="LONGVARCHAR" />
+    <result column="tcm_pharmacological" property="tcmPharmacological" jdbcType="LONGVARCHAR" />
+    <result column="tcm_chemical" property="tcmChemical" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    tcm_id, tcm_name_zh, tcm_name_en, tcm_pinyin, tcm_inductive, tcm_taste, tcm_alias
+  </sql>
+  <sql id="Blob_Column_List" >
+    tcm_come, tcm_traits, tcm_plant, tcm_distribution, tcm_produce, tcm_note, tcm_function, 
+    tcm_clinical, tcm_pharmacological, tcm_chemical
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.example.tcm_kgsystem.entity.TcmExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from tcm
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.example.tcm_kgsystem.entity.TcmExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from tcm
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from tcm
+    where tcm_id = #{tcmId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from tcm
+    where tcm_id = #{tcmId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.example.tcm_kgsystem.entity.TcmExample" >
+    delete from tcm
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.example.tcm_kgsystem.entity.TcmWithBLOBs" >
+    insert into tcm (tcm_id, tcm_name_zh, tcm_name_en, 
+      tcm_pinyin, tcm_inductive, tcm_taste, 
+      tcm_alias, tcm_come, tcm_traits, 
+      tcm_plant, tcm_distribution, tcm_produce, 
+      tcm_note, tcm_function, tcm_clinical, 
+      tcm_pharmacological, tcm_chemical
+      )
+    values (#{tcmId,jdbcType=BIGINT}, #{tcmNameZh,jdbcType=VARCHAR}, #{tcmNameEn,jdbcType=VARCHAR}, 
+      #{tcmPinyin,jdbcType=VARCHAR}, #{tcmInductive,jdbcType=VARCHAR}, #{tcmTaste,jdbcType=VARCHAR}, 
+      #{tcmAlias,jdbcType=VARCHAR}, #{tcmCome,jdbcType=LONGVARCHAR}, #{tcmTraits,jdbcType=LONGVARCHAR}, 
+      #{tcmPlant,jdbcType=LONGVARCHAR}, #{tcmDistribution,jdbcType=LONGVARCHAR}, #{tcmProduce,jdbcType=LONGVARCHAR}, 
+      #{tcmNote,jdbcType=LONGVARCHAR}, #{tcmFunction,jdbcType=LONGVARCHAR}, #{tcmClinical,jdbcType=LONGVARCHAR}, 
+      #{tcmPharmacological,jdbcType=LONGVARCHAR}, #{tcmChemical,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.tcm_kgsystem.entity.TcmWithBLOBs" >
+    insert into tcm
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="tcmId != null" >
+        tcm_id,
+      </if>
+      <if test="tcmNameZh != null" >
+        tcm_name_zh,
+      </if>
+      <if test="tcmNameEn != null" >
+        tcm_name_en,
+      </if>
+      <if test="tcmPinyin != null" >
+        tcm_pinyin,
+      </if>
+      <if test="tcmInductive != null" >
+        tcm_inductive,
+      </if>
+      <if test="tcmTaste != null" >
+        tcm_taste,
+      </if>
+      <if test="tcmAlias != null" >
+        tcm_alias,
+      </if>
+      <if test="tcmCome != null" >
+        tcm_come,
+      </if>
+      <if test="tcmTraits != null" >
+        tcm_traits,
+      </if>
+      <if test="tcmPlant != null" >
+        tcm_plant,
+      </if>
+      <if test="tcmDistribution != null" >
+        tcm_distribution,
+      </if>
+      <if test="tcmProduce != null" >
+        tcm_produce,
+      </if>
+      <if test="tcmNote != null" >
+        tcm_note,
+      </if>
+      <if test="tcmFunction != null" >
+        tcm_function,
+      </if>
+      <if test="tcmClinical != null" >
+        tcm_clinical,
+      </if>
+      <if test="tcmPharmacological != null" >
+        tcm_pharmacological,
+      </if>
+      <if test="tcmChemical != null" >
+        tcm_chemical,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="tcmId != null" >
+        #{tcmId,jdbcType=BIGINT},
+      </if>
+      <if test="tcmNameZh != null" >
+        #{tcmNameZh,jdbcType=VARCHAR},
+      </if>
+      <if test="tcmNameEn != null" >
+        #{tcmNameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="tcmPinyin != null" >
+        #{tcmPinyin,jdbcType=VARCHAR},
+      </if>
+      <if test="tcmInductive != null" >
+        #{tcmInductive,jdbcType=VARCHAR},
+      </if>
+      <if test="tcmTaste != null" >
+        #{tcmTaste,jdbcType=VARCHAR},
+      </if>
+      <if test="tcmAlias != null" >
+        #{tcmAlias,jdbcType=VARCHAR},
+      </if>
+      <if test="tcmCome != null" >
+        #{tcmCome,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="tcmTraits != null" >
+        #{tcmTraits,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="tcmPlant != null" >
+        #{tcmPlant,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="tcmDistribution != null" >
+        #{tcmDistribution,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="tcmProduce != null" >
+        #{tcmProduce,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="tcmNote != null" >
+        #{tcmNote,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="tcmFunction != null" >
+        #{tcmFunction,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="tcmClinical != null" >
+        #{tcmClinical,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="tcmPharmacological != null" >
+        #{tcmPharmacological,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="tcmChemical != null" >
+        #{tcmChemical,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.example.tcm_kgsystem.entity.TcmExample" resultType="java.lang.Integer" >
+    select count(*) from tcm
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update tcm
+    <set >
+      <if test="record.tcmId != null" >
+        tcm_id = #{record.tcmId,jdbcType=BIGINT},
+      </if>
+      <if test="record.tcmNameZh != null" >
+        tcm_name_zh = #{record.tcmNameZh,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tcmNameEn != null" >
+        tcm_name_en = #{record.tcmNameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tcmPinyin != null" >
+        tcm_pinyin = #{record.tcmPinyin,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tcmInductive != null" >
+        tcm_inductive = #{record.tcmInductive,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tcmTaste != null" >
+        tcm_taste = #{record.tcmTaste,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tcmAlias != null" >
+        tcm_alias = #{record.tcmAlias,jdbcType=VARCHAR},
+      </if>
+      <if test="record.tcmCome != null" >
+        tcm_come = #{record.tcmCome,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.tcmTraits != null" >
+        tcm_traits = #{record.tcmTraits,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.tcmPlant != null" >
+        tcm_plant = #{record.tcmPlant,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.tcmDistribution != null" >
+        tcm_distribution = #{record.tcmDistribution,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.tcmProduce != null" >
+        tcm_produce = #{record.tcmProduce,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.tcmNote != null" >
+        tcm_note = #{record.tcmNote,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.tcmFunction != null" >
+        tcm_function = #{record.tcmFunction,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.tcmClinical != null" >
+        tcm_clinical = #{record.tcmClinical,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.tcmPharmacological != null" >
+        tcm_pharmacological = #{record.tcmPharmacological,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.tcmChemical != null" >
+        tcm_chemical = #{record.tcmChemical,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update tcm
+    set tcm_id = #{record.tcmId,jdbcType=BIGINT},
+      tcm_name_zh = #{record.tcmNameZh,jdbcType=VARCHAR},
+      tcm_name_en = #{record.tcmNameEn,jdbcType=VARCHAR},
+      tcm_pinyin = #{record.tcmPinyin,jdbcType=VARCHAR},
+      tcm_inductive = #{record.tcmInductive,jdbcType=VARCHAR},
+      tcm_taste = #{record.tcmTaste,jdbcType=VARCHAR},
+      tcm_alias = #{record.tcmAlias,jdbcType=VARCHAR},
+      tcm_come = #{record.tcmCome,jdbcType=LONGVARCHAR},
+      tcm_traits = #{record.tcmTraits,jdbcType=LONGVARCHAR},
+      tcm_plant = #{record.tcmPlant,jdbcType=LONGVARCHAR},
+      tcm_distribution = #{record.tcmDistribution,jdbcType=LONGVARCHAR},
+      tcm_produce = #{record.tcmProduce,jdbcType=LONGVARCHAR},
+      tcm_note = #{record.tcmNote,jdbcType=LONGVARCHAR},
+      tcm_function = #{record.tcmFunction,jdbcType=LONGVARCHAR},
+      tcm_clinical = #{record.tcmClinical,jdbcType=LONGVARCHAR},
+      tcm_pharmacological = #{record.tcmPharmacological,jdbcType=LONGVARCHAR},
+      tcm_chemical = #{record.tcmChemical,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update tcm
+    set tcm_id = #{record.tcmId,jdbcType=BIGINT},
+      tcm_name_zh = #{record.tcmNameZh,jdbcType=VARCHAR},
+      tcm_name_en = #{record.tcmNameEn,jdbcType=VARCHAR},
+      tcm_pinyin = #{record.tcmPinyin,jdbcType=VARCHAR},
+      tcm_inductive = #{record.tcmInductive,jdbcType=VARCHAR},
+      tcm_taste = #{record.tcmTaste,jdbcType=VARCHAR},
+      tcm_alias = #{record.tcmAlias,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.tcm_kgsystem.entity.TcmWithBLOBs" >
+    update tcm
+    <set >
+      <if test="tcmNameZh != null" >
+        tcm_name_zh = #{tcmNameZh,jdbcType=VARCHAR},
+      </if>
+      <if test="tcmNameEn != null" >
+        tcm_name_en = #{tcmNameEn,jdbcType=VARCHAR},
+      </if>
+      <if test="tcmPinyin != null" >
+        tcm_pinyin = #{tcmPinyin,jdbcType=VARCHAR},
+      </if>
+      <if test="tcmInductive != null" >
+        tcm_inductive = #{tcmInductive,jdbcType=VARCHAR},
+      </if>
+      <if test="tcmTaste != null" >
+        tcm_taste = #{tcmTaste,jdbcType=VARCHAR},
+      </if>
+      <if test="tcmAlias != null" >
+        tcm_alias = #{tcmAlias,jdbcType=VARCHAR},
+      </if>
+      <if test="tcmCome != null" >
+        tcm_come = #{tcmCome,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="tcmTraits != null" >
+        tcm_traits = #{tcmTraits,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="tcmPlant != null" >
+        tcm_plant = #{tcmPlant,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="tcmDistribution != null" >
+        tcm_distribution = #{tcmDistribution,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="tcmProduce != null" >
+        tcm_produce = #{tcmProduce,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="tcmNote != null" >
+        tcm_note = #{tcmNote,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="tcmFunction != null" >
+        tcm_function = #{tcmFunction,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="tcmClinical != null" >
+        tcm_clinical = #{tcmClinical,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="tcmPharmacological != null" >
+        tcm_pharmacological = #{tcmPharmacological,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="tcmChemical != null" >
+        tcm_chemical = #{tcmChemical,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where tcm_id = #{tcmId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.example.tcm_kgsystem.entity.TcmWithBLOBs" >
+    update tcm
+    set tcm_name_zh = #{tcmNameZh,jdbcType=VARCHAR},
+      tcm_name_en = #{tcmNameEn,jdbcType=VARCHAR},
+      tcm_pinyin = #{tcmPinyin,jdbcType=VARCHAR},
+      tcm_inductive = #{tcmInductive,jdbcType=VARCHAR},
+      tcm_taste = #{tcmTaste,jdbcType=VARCHAR},
+      tcm_alias = #{tcmAlias,jdbcType=VARCHAR},
+      tcm_come = #{tcmCome,jdbcType=LONGVARCHAR},
+      tcm_traits = #{tcmTraits,jdbcType=LONGVARCHAR},
+      tcm_plant = #{tcmPlant,jdbcType=LONGVARCHAR},
+      tcm_distribution = #{tcmDistribution,jdbcType=LONGVARCHAR},
+      tcm_produce = #{tcmProduce,jdbcType=LONGVARCHAR},
+      tcm_note = #{tcmNote,jdbcType=LONGVARCHAR},
+      tcm_function = #{tcmFunction,jdbcType=LONGVARCHAR},
+      tcm_clinical = #{tcmClinical,jdbcType=LONGVARCHAR},
+      tcm_pharmacological = #{tcmPharmacological,jdbcType=LONGVARCHAR},
+      tcm_chemical = #{tcmChemical,jdbcType=LONGVARCHAR}
+    where tcm_id = #{tcmId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.tcm_kgsystem.entity.Tcm" >
+    update tcm
+    set tcm_name_zh = #{tcmNameZh,jdbcType=VARCHAR},
+      tcm_name_en = #{tcmNameEn,jdbcType=VARCHAR},
+      tcm_pinyin = #{tcmPinyin,jdbcType=VARCHAR},
+      tcm_inductive = #{tcmInductive,jdbcType=VARCHAR},
+      tcm_taste = #{tcmTaste,jdbcType=VARCHAR},
+      tcm_alias = #{tcmAlias,jdbcType=VARCHAR}
+    where tcm_id = #{tcmId,jdbcType=BIGINT}
+  </update>
+</mapper>

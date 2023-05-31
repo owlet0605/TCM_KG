@@ -1,0 +1,11 @@
+{
+	"List<ArticleType>":[
+		{
+			"articleTypeId":1,
+			"articleTypeTag":"test",
+			"articleTypeNum":1,
+			"articleTypeDescribe":"test"
+		}
+	],
+	"int":1
+}

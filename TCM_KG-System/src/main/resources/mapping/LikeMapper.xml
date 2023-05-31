@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.tcm_kgsystem.mapper.LikeMapper" >
+  <resultMap id="BaseResultMap" type="com.example.tcm_kgsystem.entity.Like" >
+    <id column="like_id" property="likeId" jdbcType="BIGINT" />
+    <result column="like_article_id" property="likeArticleId" jdbcType="BIGINT" />
+    <result column="like_user_id" property="likeUserId" jdbcType="BIGINT" />
+    <result column="like_type" property="likeType" jdbcType="VARCHAR" />
+    <result column="like_comment_id" property="likeCommentId" jdbcType="BIGINT" />
+    <result column="like_time" property="likeTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    like_id, like_article_id, like_user_id, like_type, like_comment_id, like_time
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.example.tcm_kgsystem.entity.LikeExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from likes
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from likes
+    where like_id = #{likeId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from likes
+    where like_id = #{likeId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.example.tcm_kgsystem.entity.LikeExample" >
+    delete from likes
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.example.tcm_kgsystem.entity.Like" >
+    insert into likes (like_id, like_article_id, like_user_id, 
+      like_type, like_comment_id, like_time
+      )
+    values (#{likeId,jdbcType=BIGINT}, #{likeArticleId,jdbcType=BIGINT}, #{likeUserId,jdbcType=BIGINT}, 
+      #{likeType,jdbcType=VARCHAR}, #{likeCommentId,jdbcType=BIGINT}, #{likeTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.tcm_kgsystem.entity.Like" >
+    insert into likes
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="likeId != null" >
+        like_id,
+      </if>
+      <if test="likeArticleId != null" >
+        like_article_id,
+      </if>
+      <if test="likeUserId != null" >
+        like_user_id,
+      </if>
+      <if test="likeType != null" >
+        like_type,
+      </if>
+      <if test="likeCommentId != null" >
+        like_comment_id,
+      </if>
+      <if test="likeTime != null" >
+        like_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="likeId != null" >
+        #{likeId,jdbcType=BIGINT},
+      </if>
+      <if test="likeArticleId != null" >
+        #{likeArticleId,jdbcType=BIGINT},
+      </if>
+      <if test="likeUserId != null" >
+        #{likeUserId,jdbcType=BIGINT},
+      </if>
+      <if test="likeType != null" >
+        #{likeType,jdbcType=VARCHAR},
+      </if>
+      <if test="likeCommentId != null" >
+        #{likeCommentId,jdbcType=BIGINT},
+      </if>
+      <if test="likeTime != null" >
+        #{likeTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.example.tcm_kgsystem.entity.LikeExample" resultType="java.lang.Integer" >
+    select count(*) from likes
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update likes
+    <set >
+      <if test="record.likeId != null" >
+        like_id = #{record.likeId,jdbcType=BIGINT},
+      </if>
+      <if test="record.likeArticleId != null" >
+        like_article_id = #{record.likeArticleId,jdbcType=BIGINT},
+      </if>
+      <if test="record.likeUserId != null" >
+        like_user_id = #{record.likeUserId,jdbcType=BIGINT},
+      </if>
+      <if test="record.likeType != null" >
+        like_type = #{record.likeType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.likeCommentId != null" >
+        like_comment_id = #{record.likeCommentId,jdbcType=BIGINT},
+      </if>
+      <if test="record.likeTime != null" >
+        like_time = #{record.likeTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update likes
+    set like_id = #{record.likeId,jdbcType=BIGINT},
+      like_article_id = #{record.likeArticleId,jdbcType=BIGINT},
+      like_user_id = #{record.likeUserId,jdbcType=BIGINT},
+      like_type = #{record.likeType,jdbcType=VARCHAR},
+      like_comment_id = #{record.likeCommentId,jdbcType=BIGINT},
+      like_time = #{record.likeTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.tcm_kgsystem.entity.Like" >
+    update likes
+    <set >
+      <if test="likeArticleId != null" >
+        like_article_id = #{likeArticleId,jdbcType=BIGINT},
+      </if>
+      <if test="likeUserId != null" >
+        like_user_id = #{likeUserId,jdbcType=BIGINT},
+      </if>
+      <if test="likeType != null" >
+        like_type = #{likeType,jdbcType=VARCHAR},
+      </if>
+      <if test="likeCommentId != null" >
+        like_comment_id = #{likeCommentId,jdbcType=BIGINT},
+      </if>
+      <if test="likeTime != null" >
+        like_time = #{likeTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where like_id = #{likeId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.tcm_kgsystem.entity.Like" >
+    update likes
+    set like_article_id = #{likeArticleId,jdbcType=BIGINT},
+      like_user_id = #{likeUserId,jdbcType=BIGINT},
+      like_type = #{likeType,jdbcType=VARCHAR},
+      like_comment_id = #{likeCommentId,jdbcType=BIGINT},
+      like_time = #{likeTime,jdbcType=TIMESTAMP}
+    where like_id = #{likeId,jdbcType=BIGINT}
+  </update>
+</mapper>

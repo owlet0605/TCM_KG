@@ -1,0 +1,15 @@
+{
+	"Like":{
+		"likeId":1,
+		"likeArticleId":1,
+		"likeUserId":1,
+		"likeType":"test",
+		"likeCommentId":1,
+		"likeTime":1684147125413
+	},
+	"TransportObject":{
+		"code":1,
+		"msg":"test",
+		"object":{}
+	}
+}

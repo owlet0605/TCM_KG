@@ -1,0 +1,35 @@
+{
+	"User":{
+		"userId":1,
+		"userName":"test",
+		"userPassword":"test",
+		"userSex":"test",
+		"userEmail":"test",
+		"userPhone":"test",
+		"userStatus":1,
+		"registerTime":1684146620470,
+		"userBirthday":1684146620470,
+		"userImg":"test",
+		"userFans":1,
+		"userConcern":1,
+		"userLike":1,
+		"userView":1,
+		"userSecurity":1,
+		"userToken":"test"
+	},
+	"Article":{
+		"articleId":1,
+		"articleUserId":1,
+		"articleTypeId":1,
+		"articleTitle":"test",
+		"articleTime":1684146620454,
+		"articleView":1,
+		"articleComment":1,
+		"articleLike":1,
+		"articleCollect":1,
+		"articleAudit":1,
+		"articleContext":"test"
+	},
+	"long":1,
+	"int":1
+}

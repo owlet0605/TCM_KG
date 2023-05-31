@@ -1,0 +1,13 @@
+{
+	"History":{
+		"historyId":1,
+		"historyArticleId":1,
+		"historyUserId":1,
+		"historyTime":1684147213609
+	},
+	"TransportObject":{
+		"code":1,
+		"msg":"test",
+		"object":{}
+	}
+}

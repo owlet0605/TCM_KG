@@ -1,0 +1,30 @@
+{
+	"User":{
+		"userId":1,
+		"userName":"test",
+		"userPassword":"test",
+		"userSex":"test",
+		"userEmail":"test",
+		"userPhone":"test",
+		"userStatus":1,
+		"registerTime":1684147139658,
+		"userBirthday":1684147139658,
+		"userImg":"test",
+		"userFans":1,
+		"userConcern":1,
+		"userLike":1,
+		"userView":1,
+		"userSecurity":1,
+		"userToken":"test"
+	},
+	"Concern":{
+		"concernId":1,
+		"concernUserId":1,
+		"concernedUserId":1
+	},
+	"TransportObject":{
+		"code":1,
+		"msg":"test",
+		"object":{}
+	}
+}

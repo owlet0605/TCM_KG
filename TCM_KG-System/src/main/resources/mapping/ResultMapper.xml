@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.tcm_kgsystem.mapper.ResultMapper" >
+  <resultMap id="BaseResultMap" type="com.example.tcm_kgsystem.entity.Result" >
+    <id column="result_id" property="resultId" jdbcType="BIGINT" />
+    <result column="result_admin_id" property="resultAdminId" jdbcType="BIGINT" />
+    <result column="result_user_id" property="resultUserId" jdbcType="BIGINT" />
+    <result column="result_type" property="resultType" jdbcType="VARCHAR" />
+    <result column="result_time" property="resultTime" jdbcType="TIMESTAMP" />
+    <result column="result_have" property="resultHave" jdbcType="INTEGER" />
+    <result column="result_object_id" property="resultObjectId" jdbcType="BIGINT" />
+    <result column="result_object" property="resultObject" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.example.tcm_kgsystem.entity.Result" extends="BaseResultMap" >
+    <result column="result_reason" property="resultReason" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    result_id, result_admin_id, result_user_id, result_type, result_time, result_have, 
+    result_object_id, result_object
+  </sql>
+  <sql id="Blob_Column_List" >
+    result_reason
+  </sql>
+  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="com.example.tcm_kgsystem.entity.ResultExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from result
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.example.tcm_kgsystem.entity.ResultExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from result
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from result
+    where result_id = #{resultId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from result
+    where result_id = #{resultId,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.example.tcm_kgsystem.entity.ResultExample" >
+    delete from result
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.example.tcm_kgsystem.entity.Result" >
+    insert into result (result_id, result_admin_id, result_user_id, 
+      result_type, result_time, result_have, 
+      result_object_id, result_object, result_reason
+      )
+    values (#{resultId,jdbcType=BIGINT}, #{resultAdminId,jdbcType=BIGINT}, #{resultUserId,jdbcType=BIGINT}, 
+      #{resultType,jdbcType=VARCHAR}, #{resultTime,jdbcType=TIMESTAMP}, #{resultHave,jdbcType=INTEGER}, 
+      #{resultObjectId,jdbcType=BIGINT}, #{resultObject,jdbcType=VARCHAR}, #{resultReason,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.tcm_kgsystem.entity.Result" >
+    insert into result
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="resultId != null" >
+        result_id,
+      </if>
+      <if test="resultAdminId != null" >
+        result_admin_id,
+      </if>
+      <if test="resultUserId != null" >
+        result_user_id,
+      </if>
+      <if test="resultType != null" >
+        result_type,
+      </if>
+      <if test="resultTime != null" >
+        result_time,
+      </if>
+      <if test="resultHave != null" >
+        result_have,
+      </if>
+      <if test="resultObjectId != null" >
+        result_object_id,
+      </if>
+      <if test="resultObject != null" >
+        result_object,
+      </if>
+      <if test="resultReason != null" >
+        result_reason,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="resultId != null" >
+        #{resultId,jdbcType=BIGINT},
+      </if>
+      <if test="resultAdminId != null" >
+        #{resultAdminId,jdbcType=BIGINT},
+      </if>
+      <if test="resultUserId != null" >
+        #{resultUserId,jdbcType=BIGINT},
+      </if>
+      <if test="resultType != null" >
+        #{resultType,jdbcType=VARCHAR},
+      </if>
+      <if test="resultTime != null" >
+        #{resultTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resultHave != null" >
+        #{resultHave,jdbcType=INTEGER},
+      </if>
+      <if test="resultObjectId != null" >
+        #{resultObjectId,jdbcType=BIGINT},
+      </if>
+      <if test="resultObject != null" >
+        #{resultObject,jdbcType=VARCHAR},
+      </if>
+      <if test="resultReason != null" >
+        #{resultReason,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.example.tcm_kgsystem.entity.ResultExample" resultType="java.lang.Integer" >
+    select count(*) from result
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update result
+    <set >
+      <if test="record.resultId != null" >
+        result_id = #{record.resultId,jdbcType=BIGINT},
+      </if>
+      <if test="record.resultAdminId != null" >
+        result_admin_id = #{record.resultAdminId,jdbcType=BIGINT},
+      </if>
+      <if test="record.resultUserId != null" >
+        result_user_id = #{record.resultUserId,jdbcType=BIGINT},
+      </if>
+      <if test="record.resultType != null" >
+        result_type = #{record.resultType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.resultTime != null" >
+        result_time = #{record.resultTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.resultHave != null" >
+        result_have = #{record.resultHave,jdbcType=INTEGER},
+      </if>
+      <if test="record.resultObjectId != null" >
+        result_object_id = #{record.resultObjectId,jdbcType=BIGINT},
+      </if>
+      <if test="record.resultObject != null" >
+        result_object = #{record.resultObject,jdbcType=VARCHAR},
+      </if>
+      <if test="record.resultReason != null" >
+        result_reason = #{record.resultReason,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map" >
+    update result
+    set result_id = #{record.resultId,jdbcType=BIGINT},
+      result_admin_id = #{record.resultAdminId,jdbcType=BIGINT},
+      result_user_id = #{record.resultUserId,jdbcType=BIGINT},
+      result_type = #{record.resultType,jdbcType=VARCHAR},
+      result_time = #{record.resultTime,jdbcType=TIMESTAMP},
+      result_have = #{record.resultHave,jdbcType=INTEGER},
+      result_object_id = #{record.resultObjectId,jdbcType=BIGINT},
+      result_object = #{record.resultObject,jdbcType=VARCHAR},
+      result_reason = #{record.resultReason,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update result
+    set result_id = #{record.resultId,jdbcType=BIGINT},
+      result_admin_id = #{record.resultAdminId,jdbcType=BIGINT},
+      result_user_id = #{record.resultUserId,jdbcType=BIGINT},
+      result_type = #{record.resultType,jdbcType=VARCHAR},
+      result_time = #{record.resultTime,jdbcType=TIMESTAMP},
+      result_have = #{record.resultHave,jdbcType=INTEGER},
+      result_object_id = #{record.resultObjectId,jdbcType=BIGINT},
+      result_object = #{record.resultObject,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.tcm_kgsystem.entity.Result" >
+    update result
+    <set >
+      <if test="resultAdminId != null" >
+        result_admin_id = #{resultAdminId,jdbcType=BIGINT},
+      </if>
+      <if test="resultUserId != null" >
+        result_user_id = #{resultUserId,jdbcType=BIGINT},
+      </if>
+      <if test="resultType != null" >
+        result_type = #{resultType,jdbcType=VARCHAR},
+      </if>
+      <if test="resultTime != null" >
+        result_time = #{resultTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="resultHave != null" >
+        result_have = #{resultHave,jdbcType=INTEGER},
+      </if>
+      <if test="resultObjectId != null" >
+        result_object_id = #{resultObjectId,jdbcType=BIGINT},
+      </if>
+      <if test="resultObject != null" >
+        result_object = #{resultObject,jdbcType=VARCHAR},
+      </if>
+      <if test="resultReason != null" >
+        result_reason = #{resultReason,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where result_id = #{resultId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.example.tcm_kgsystem.entity.Result" >
+    update result
+    set result_admin_id = #{resultAdminId,jdbcType=BIGINT},
+      result_user_id = #{resultUserId,jdbcType=BIGINT},
+      result_type = #{resultType,jdbcType=VARCHAR},
+      result_time = #{resultTime,jdbcType=TIMESTAMP},
+      result_have = #{resultHave,jdbcType=INTEGER},
+      result_object_id = #{resultObjectId,jdbcType=BIGINT},
+      result_object = #{resultObject,jdbcType=VARCHAR},
+      result_reason = #{resultReason,jdbcType=LONGVARCHAR}
+    where result_id = #{resultId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.tcm_kgsystem.entity.Result" >
+    update result
+    set result_admin_id = #{resultAdminId,jdbcType=BIGINT},
+      result_user_id = #{resultUserId,jdbcType=BIGINT},
+      result_type = #{resultType,jdbcType=VARCHAR},
+      result_time = #{resultTime,jdbcType=TIMESTAMP},
+      result_have = #{resultHave,jdbcType=INTEGER},
+      result_object_id = #{resultObjectId,jdbcType=BIGINT},
+      result_object = #{resultObject,jdbcType=VARCHAR}
+    where result_id = #{resultId,jdbcType=BIGINT}
+  </update>
+</mapper>
